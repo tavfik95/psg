@@ -1,0 +1,37 @@
+.bloc-image{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    width: 25%;
+
+}
+
+.bloc-image :hover{
+    cursor: pointer;
+}
+
+form, p{
+    text-align: center;
+}
+
+p{
+    font-size: 1.4em;
+}
+
+input{
+    width: 25%;
+    margin-bottom:2%;
+    text-align: center;
+}
+
+button{
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.inputLastName{
+    margin-left: 2%;
+}

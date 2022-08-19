@@ -1,0 +1,98 @@
+   <img src="../../assets/img/palmares/entete.png" alt="" style="width: 100%">
+<div class="container">
+   <h3 class="trophee">Ligue 1</h3>
+      <div class="row">
+         <div class="col-md-6">
+            <img src="../../assets/img/palmares/ligueUn.png" alt="" style="width: 100%">
+         </div>
+         <div class="col-md-6">
+            <table> 
+               <div *ngFor="let ligueUn of ligueUn$|async" >
+                  <tr>
+                     <td>{{ligueUn.annee}}</td>
+                     <td><span class="vert">&bull;	</span> {{ligueUn.victoire}}</td>
+                     <td><span class="gris">&bull;	</span>	 {{ligueUn.nul}}</td>
+                     <td><span class="rouge">&bull;	</span> {{ligueUn.defaite}}</td>
+                     <td><span class="points"> {{ligueUn.point}} </span></td>
+                  </tr>
+               </div>
+            </table>
+         </div>
+      </div>
+
+   <h3 class="trophee">Coupe de France</h3>
+   <div class="row">
+      <div class="col-md-6">
+      <img src="../../assets/img/palmares/coupeDeFrance.png" alt="" style="width: 100%">
+      </div>
+      <div class="col-md-6">
+         <table>
+            <tr>
+               <div *ngFor="let coupeDeFrance of coupeDeFrance$|async" >
+                  <td> {{coupeDeFrance.annee}} </td>
+                  <td> <span class="adversaire">{{coupeDeFrance.adversaire}}</span> </td> 
+                  <td class="score"> <span class="score">{{coupeDeFrance.score}}</span></td>
+               </div>
+            </tr>
+         </table>
+      </div>
+   </div>
+
+   <h3 class="trophee">Coupe de la ligue</h3>
+   <div class="row">
+      <div class="col-md-6">
+      <img src="../../assets/img/palmares/coupeDeLaLigue.png" alt="" style="width: 100%">
+      </div>
+      <div class="col-md-6">
+         <table>
+            <tr>
+               <div *ngFor="let coupeDeLaLigue of coupeDeLaLigue$|async" >
+                  <td> {{coupeDeLaLigue.annee}} </td>
+                  <td> <span class="adversaire">{{coupeDeLaLigue.adversaire}}</span> </td> 
+                  <td  class="score" > <span class="score" >{{coupeDeLaLigue.score}}</span></td>
+               </div>
+            </tr>
+         </table>
+      </div>
+   </div>
+
+   <h3 class="trophee">Trophées des Champions</h3>
+   <div class="row">
+      <div class="col-md-6">
+      <img src="../../assets/img/palmares/tropheeDesChampions.png" alt="" style="width: 100%">
+      </div>
+      <div class="col-md-6">
+         <table>
+            <tr>
+               <div *ngFor="let tropheeDesChampions of tropheesDesChampions$|async" >
+                  <td> {{tropheeDesChampions.annee}} </td>
+                  <td> <span class="adversaire">{{tropheeDesChampions.adversaire}}</span> </td> 
+                  <td class="score"> <span class="score">{{tropheeDesChampions.score}}</span></td>
+               </div>
+            </tr>
+         </table>
+      </div>
+   </div>
+
+   <h3 class="trophee">Coupe Des Coupes</h3>
+   <div class="row">
+      <div class="col-md-6">
+      <img src="../../assets/img/palmares/coupeDesCoupes.png" alt="" style="width: 100%">
+      </div>
+      <div class="col-md-6">
+         <table>
+               <div *ngFor="let coupeDesCoupes of coupeDesCoupes$|async" >
+                  <tbody>
+                     <tr>
+                        <td> {{coupeDesCoupes.annee}} </td>
+                        <td> <span class="adversaire">{{coupeDesCoupes.adversaire}}</span> </td> 
+                        <td class="scoreCdC"> <span class="scoreCdC">{{coupeDesCoupes.score}}</span></td>
+                     </tr>
+               </tbody>
+               </div>
+         </table>
+      </div>
+   </div>
+</div>
+<button class="backMain" (click)="home()"> RETOUR</button>
+

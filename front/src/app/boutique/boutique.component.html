@@ -1,0 +1,38 @@
+<img src="../../assets/img/boutique/entete.png" alt="" style="width: 100%">
+<p class="marquee">
+    <span>
+       Livraison gratuite à partir de 100€ <i class="fa-solid fa-truck"></i>
+    </span>
+</p>
+
+    <div *ngIf=" !produit.enfant && !produit.femme && !produit.homme" >
+    <div class="bouton"> 
+        <div class="enfantImg">
+            <img src="../../assets/img/boutique/enfant/enfant.png" alt="" style="width: 50%;" (click)="onViewEnfant()">
+            <div class="text">Enfant</div>
+        </div>
+        <div class="femmeImg">
+            <img src="../../assets/img/boutique/femme/femme.png" alt="" style="width: 50%;" (click)="onViewFemme()">
+            <div class="text">Femme</div>
+        </div>
+        <div class="hommeImg">
+            <img src="../../assets/img/boutique/homme/homme.png" alt="" style="width: 50%;" (click)="onViewHomme()">
+            <div class="text">Homme</div>
+        </div>
+    </div>
+    <button class="backMain" (click)="home()"> RETOUR</button>
+
+</div>
+<div class="enfant" *ngIf=" produit.enfant && !produit.femme && !produit.homme" >
+    <app-produit-list-enfant *ngFor="let produit of produitsEnfant$|async" [produit]="produit" (choixBoutique)="choixBoutique"></app-produit-list-enfant>
+    <button class="back" (click)="onBack()"> Back </button>
+</div>
+<div class="femme" *ngIf=" !produit.enfant && produit.femme && !produit.homme" >
+    <app-produit-list-femme *ngFor="let produit of produitsFemme$|async" [produit]="produit" ></app-produit-list-femme>
+    <button class="back" (click)="onBack()"> Back </button>
+</div>
+<div class="homme" *ngIf=" !produit.enfant && !produit.femme && produit.homme" >
+    <app-produit-list-femme *ngFor="let produit of produitsHomme$|async" [produit]="produit" ></app-produit-list-femme>
+    <button class="back" (click)="onBack()"> Back </button>
+</div>
+

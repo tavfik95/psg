@@ -1,0 +1,76 @@
+.col-md-6, .bloc{
+    height: 50%;
+    width: 50%;
+}
+
+
+.row{
+    display: flex;
+}
+
+.img-home{
+    width: 98%;
+    padding: 1%;
+
+
+}
+
+.img-home:hover {
+    opacity: 0.3;
+}
+
+.col-md-6 .text-effectif {
+    color:transparent;
+    transition: .5s ease;
+    position: absolute;
+    top: 55%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+.col-md-6 .text-actu  {
+    color: transparent;
+    transition: .5s ease;
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+.col-md-6:hover .text-actu, .col-md-6:hover .text-effectif, .col-md-6:hover .text-palmares, .col-md-6:hover .text-boutique{
+    color: black;
+}
+  .text-palmares {
+    color: transparent;
+    transition: .5s ease;
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+.text-boutique {
+    color: transparent;
+    transition: .5s ease;
+    position: absolute;
+    top: 100%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .text-effectif:hover{
+    opacity: 1;
+    transition: .9s ease;
+
+}
+  
+.text-actu, .text-boutique, .text-effectif, .text-palmares{
+    font-size: 35px;
+}

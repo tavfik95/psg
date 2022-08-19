@@ -1,0 +1,53 @@
+
+td, th {
+    width: 20%
+}
+
+table{
+    text-align: center;
+}
+
+button{
+    text-align: center;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    width: 100px;
+    height: 50px;
+    box-shadow: rgb(238, 225, 225) 3px 3px 7px;
+    color: #ea3849;
+}
+
+.details{
+    width: 50%;
+}
+
+.expedition{
+    margin-bottom: 3em;
+}
+
+.divExpedition{
+    margin-bottom: 1em;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: blue !important;
+  }
+  
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: blue!important;   
+  }
+  
+  ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+   border-color:blue!important; 
+  }
+
+  .basPage{
+    display: flex;
+    justify-content: center;
+  }
+
+  .title{
+    margin: 1% 0 1% 1%;
+    font-size: 1em;
+    font-weight: bold;
+  }

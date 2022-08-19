@@ -1,0 +1,3 @@
+<img src="../../assets/img/actualite/entete.jpg" alt="" style="width: 100%;">
+<app-article-list *ngFor="let article of articles$|async" [article]="article"></app-article-list>
+<button class="backMain" (click)="home()"> RETOUR</button>

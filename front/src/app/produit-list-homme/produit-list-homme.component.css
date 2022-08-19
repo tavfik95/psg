@@ -1,0 +1,11 @@
+.cards{
+    margin: 15px;
+    display: flex;
+}
+
+
+.cards :hover{
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}

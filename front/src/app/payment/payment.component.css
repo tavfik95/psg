@@ -1,0 +1,15 @@
+.container{
+    margin-top: 1%;
+}
+.paypal{
+    text-align: center;
+}
+
+th, .total{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.total{
+    margin-left: 82%;
+}

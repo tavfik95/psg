@@ -1,0 +1,44 @@
+"""backend URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from actualite.views import actualite, article
+from order.views import addOrder
+from newsletter.views import addAddress
+from palmares.views import ligueUn, coupeDeFrance, coupeDeLaLigue, tropheesDesChampions, coupeDesCoupes
+from boutique.views import boutiqueEnfant, boutiqueFemme, boutiqueHomme, produitEnfant, produitFemme, produitHomme
+from effectif.views import joueur, ficheJoueur
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('joueurs/',joueur),
+    path('joueur/<id>',ficheJoueur),
+    path('boutique/enfant',boutiqueEnfant ),
+    path('produit/enfant/<id>', produitEnfant),
+    path('boutique/femme',boutiqueFemme ),
+    path('produit/femme/<id>', produitFemme),
+    path('boutique/homme',boutiqueHomme ),
+    path('produit/homme/<id>', produitHomme),
+    path('articles/',actualite ),
+    path('article/<id>', article),
+    path('ligue1/',ligueUn),
+    path('coupe_de_france/',coupeDeFrance),
+    path('coupe_de_la_ligue/',coupeDeLaLigue),
+    path('trophees_des_champions/',tropheesDesChampions),
+    path('coupe_des_coupes/',coupeDesCoupes),
+    path('addUser/', addAddress),
+    path('addOrder/',addOrder),
+
+]

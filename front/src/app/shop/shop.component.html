@@ -1,0 +1,25 @@
+<div *ngIf="!productDatas.productIsSubmitted && !contactDatas.contactIsSubmitted && !informationsChecked.checked && !paymentApproved.approved">
+    <p class="marquee">
+        <span>
+           Livraison gratuite à partir de 100€ - Livraison en 24h (sauf pour les articles personnalisés)
+        </span>
+    </p>
+    <app-produit (productDatas)="productDatas=$event" [produit]="produit"> </app-produit>
+</div>
+<div *ngIf="productDatas.productIsSubmitted && !contactDatas.contactIsSubmitted && !informationsChecked.checked && !paymentApproved.approved">
+    <p class="marquee">
+        <span>
+           Livraison gratuite à partir de 100€ - Livraison en 24h (sauf pour les articles personnalisés)
+        </span>
+    </p>
+    <app-summary [productDatas]="productDatas" (informationsChecked)="informationsChecked=$event" (totalPrice)="totalPrice=$event"> </app-summary>
+</div>
+<div *ngIf="productDatas.productIsSubmitted && !contactDatas.contactIsSubmitted && informationsChecked.checked && !paymentApproved.approved">
+    <app-info-client (contactDatas)="contactDatas=$event" > </app-info-client>
+</div>
+<div *ngIf="productDatas.productIsSubmitted && contactDatas.contactIsSubmitted && informationsChecked.checked && !paymentApproved.approved">
+    <app-payment [productDatas]="productDatas" [contactDatas] = "contactDatas" (paymentApproved)="paymentApproved=$event" [totalPrice]="totalPrice"></app-payment>
+</div>
+<div *ngIf="productDatas.productIsSubmitted && contactDatas.contactIsSubmitted && informationsChecked.checked && paymentApproved.approved">
+    <app-payment-approved [paymentApproved]="paymentApproved" [productDatas]="productDatas" [contactDatas] = "contactDatas" [totalPrice]="totalPrice"></app-payment-approved>
+</div>

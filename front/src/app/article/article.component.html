@@ -1,0 +1,20 @@
+<div class="container" *ngIf="article$ | async as article">
+    <p class="title">{{article.title}}</p>
+    <img src="{{article.photoTitle}}" alt="" style="width: 50%">
+    <p class="shortDescription">{{article.shortDescription}}</p>
+    <p class="question">{{article.questionOne}}</p>
+    <p class="answer">{{article.answerOne}}</p>
+    <p class="question">{{article.questionTwo}}</p>
+    <p class="answer">{{article.answerTwo}}</p>
+    <img src="{{article.photoTexte}}" alt="" style="width: 50%">
+    <p class="question">{{article.questionThree}}</p>
+    <p class="answer">{{article.answerThree}}</p>
+    <p class="question">{{article.questionFour}}</p>
+    <p class="answer">{{article.answerFour}}</p>
+    <p class="question">{{article.questionFive}}</p>
+    <p class="answer">{{article.answerFive}}</p>
+    <p class="question">{{article.questionSix}}</p>
+    <p class="answer">{{article.answerSix}}</p>   
+</div>
+<button class="back" (click)="actualite()"> RETOUR</button>
+

@@ -1,0 +1,59 @@
+.card{
+    height: 250px;
+    width: 410px;
+    margin: 2% 5%;
+    box-sizing: border-box;
+    box-shadow: lightgray 4px 4px 20px;
+    background-image: url(../../assets/img/effectif/landing-page/fond.png);
+    background-repeat: no-repeat;
+    display: flex;
+    
+}
+
+.card :hover{
+    cursor: pointer;
+}
+
+
+ .info{
+    margin-left: 66%;
+    margin-top: -40%;
+} 
+
+h6, p{
+    color: white;
+    text-align: center;
+}
+
+.number{
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+
+
+ img{
+    padding-top: 15px;
+    margin-left: 12%;
+    transition: transform .2s;
+} 
+
+img:hover{
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+.image{
+    display: flex;
+    margin-left: 5%;
+}
+
+.imgNumber{
+    margin-top: -17%;
+    margin-left: -10%;
+}
+

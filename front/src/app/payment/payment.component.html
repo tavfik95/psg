@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Article </th>
+                        <th> Détails</th>
+                        <th>Taille</th>
+                        <th>Prix Unitaire</th>
+                        <th>Quantité</th>
+                        <th>Prix à payer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of products; let i=index;">
+                        <td><img src="{{item[0].photoUrl}}" alt="" style="width: 120px;"></td>
+                        <td>
+                            <p>{{item[0].shortDescription}}</p>
+                            <div *ngIf="productDatas.nomPersonnalisation"> 
+                                <p> Nom : {{item[3]}}</p>
+                                <p> Numero : {{item[4]}}</p>
+                                <p>Cet article sera généralement expédié dans les 24h ouvrées. Veuillez prévoir un délai supplémentaire de 3 jours pour la livraison des articles personnalisés.</p>
+                            </div>
+                        </td>
+                        <td>{{item[1]}}</td>
+                        <td>{{item[0].price}}</td>
+                        <td> {{item[2]}}</td>
+                        <td>{{item[0].price * item[2]}} €</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <p class="total">Total à payer</p>
+    <p class="total">{{totalPrice.price}} €</p>
+</div>
+<div class="paypal" #paypal></div>

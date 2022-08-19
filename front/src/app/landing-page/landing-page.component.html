@@ -1,0 +1,20 @@
+<div class="bloc-image">
+    <img src="../../assets/img/Paris_Saint-Germain_Logo.svg.webp" alt="" routerLink="home">
+</div>
+<div *ngIf="!submit">
+<p>Souhaitez vous inscrire à la newsletter</p>
+<form #form="ngForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <input class="inputEmail" type="email" [formControl]="controlAddress" [placeholder]="'Veuillez rentre votre adresse mail'" >
+    <div *ngIf="controlAddress.value" >
+        <p>Pour finaliser votre inscription, nous avons besoin de votre Nom et Prénom </p>
+        <input class="inputFirstName" type="text" [formControl]="controlFirstName" [placeholder]="'Veuillez rentre prénom'" >
+        <input class="inputLastName" type="text" [formControl]="controlLastName" [placeholder]="'Veuillez rentre votre nom'" >
+    </div>
+    <div *ngIf="controlFirstName.value && controlLastName.value">
+        <button> S'inscrire</button>
+    </div>
+</form>
+</div>
+<div *ngIf="submit">
+    <p>Nous vous remercions de votre inscription</p>
+</div>

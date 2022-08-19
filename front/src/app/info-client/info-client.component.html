@@ -1,0 +1,21 @@
+<p>Adresse de Livraison</p>
+<form #form="ngForm" [formGroup]="formContact" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div class="formulaire">
+            <div class="ligne">
+                <input [formControl]="controlFirstName"type="text" placeholder="Prénom *" required />
+                <input [formControl]="controlLastName"type="text" placeholder="Nom *" required />
+            </div>       
+            <div class="ligne">
+                <input class="inputAddress" [formControl]="controlAddress"type="text" placeholder="Adresse Postale *" required />
+            </div>
+            <div class="ligne">
+                <input [formControl]="controlCity"type="text" placeholder="Ville *" required />
+                <input [formControl]="controlPostalCode"type="text" placeholder="Code Postale *" required />
+            </div>
+            <div class="ligne">
+                <input [formControl]="controlPhone"pattern="(0|\+)[0-9 \.]{6,17}" type="text" placeholder="Téléphone" />
+                <input [formControl]="controlMail"pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" type="text" placeholder="Email" />
+            </div>
+                <button class="btn-validation" type="submit">Suivant</button>
+    </div>
+</form>

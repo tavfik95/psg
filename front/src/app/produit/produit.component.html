@@ -1,0 +1,186 @@
+<div class="container" *ngIf=" produitEnfant$ | async as produitEnfant">
+    <div class="image">    
+        <img src="{{produitEnfant.photoUrl}}" alt="" style="width: 75%;">
+    </div>
+    <div class="info">
+        <p class="txtInfo">{{produitEnfant.shortDescription}}</p>
+        <p class="txtInfo">€{{produitEnfant.price}}</p>
+        <form #form="ngForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="gris">
+                <div class="taille">
+                    <p class="txtTaille">Taille : </p>
+                    <select class="size" [formControl]="controlSize">
+                        <option value="YTH XS">YTH XS</option>
+                        <option value="YHT S">YTH S</option>
+                        <option value="YTH M">YTH M</option>
+                        <option value="YTH L">YTH L</option>
+                        <option value="YTH XL">YTH XL</option>
+                        
+                    </select>
+                </div>
+                <div class="quantity">
+                    <div>
+                        <p class="txtQuantite"> Quantité : </p>
+                    </div>
+                    <button type="button" class="btn-left" (click)="decrement()">-</button>
+                    <input  class="inputNumber" type="number" [formControl]="controlQuantity">
+                    <button type="button" class="btn-right" (click)="increment()">+</button>
+                </div>
+                <div class="personnalisation">
+                    <p>Personalisation : </p>
+                    <mat-slide-toggle class="btn-toggle" (change)="openPersonalisation()"></mat-slide-toggle>
+                    <div class="txt-area" [ngClass]="isOpenPersonalisation ? 'open' : 'closed'" >
+                        <textarea [formControl]="controlNomPersonnalisation" class="nomPersonnalisation" name="" id="" cols="10" rows="1" placeholder="Nom (10 caractères max)"></textarea>
+                        <textarea [formControl]="controlNumeroPersonnalisation" class="numeroPersonnalisation" name="" id="" cols="3" rows="1" placeholder="Numero (2 caractères max)"></textarea>
+                    </div>
+                </div>
+                <button *ngIf=" controlQuantity.value !=0" (click)=addtocart([produitEnfant,controlSize.value,controlQuantity.value,controlNomPersonnalisation.value,controlNumeroPersonnalisation.value])>Ajouter au panier</button>
+            </div>
+        </form>
+
+        <div class="infoBox">
+            <p class="infoLivraison">Livraison </p>
+            <button (click)="openTxtLivraison()" class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenLivraison ? 'open' : 'closed'" >
+            <p>Cet article sera généralement expédié dans les 24h ouvrées. Veuillez prévoir un délai supplémentaire de 3 jours pour la livraison des articles personnalisés.</p>
+        </div>
+        <div class="infoBox">
+            <p class="infoDetails">Details </p>
+            <button (click)="openTxtDetails()" class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenDetails ? 'open' : 'closed'" >
+            <p>{{produitEnfant.details}}</p>
+        </div><div class="infoBox">
+            <p class="infoDescription">Description </p>
+            <button (click)="openTxtDescription()"class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenDescription ? 'open' : 'closed'" >
+            <p>{{produitEnfant.description}}</p>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf=" produitFemme$ | async as produitFemme">
+    <div class="image">    
+        <img src="{{produitFemme.photoUrl}}" alt="" style="width: 75%;">
+    </div>
+    <div class="info">
+        <p class="txtInfo">{{produitFemme.shortDescription}}</p>
+        <p class="txtInfo">€{{produitFemme.price}}</p>
+        <form #form="ngForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="gris">
+                <div class="taille">
+                    <p class="txtTaille">Taille : </p>
+                    <select class="size" [formControl]="controlSize">
+                        <option value=" XXS">XXS</option>
+                        <option value="XS">XS</option>
+                        <option value=" S"> S</option>
+                        <option value=" M"> M</option>
+                        <option value=" L">L</option>
+                        
+                    </select>
+                </div>
+                <div class="quantity">
+                    <div>
+                        <p class="txtQuantite"> Quantité : </p>
+                    </div>
+                    <button type="button" class="btn-left" (click)="decrement()">-</button>
+                    <input  class="inputNumber" type="number" [formControl]="controlQuantity">
+                    <button type="button" class="btn-right" (click)="increment()">+</button>
+                </div>
+                <div class="personnalisation">
+                    <p>Personalisation : </p>
+                    <mat-slide-toggle class="btn-toggle" (change)="openPersonalisation()"></mat-slide-toggle>
+                    <div class="txt-area" [ngClass]="isOpenPersonalisation ? 'open' : 'closed'" >
+                        <textarea [formControl]="controlNomPersonnalisation" class="nomPersonnalisation" name="" id="" cols="10" rows="1" placeholder="Nom (10 caractères max)"></textarea>
+                        <textarea [formControl]="controlNumeroPersonnalisation" class="numeroPersonnalisation" name="" id="" cols="3" rows="1" placeholder="Numero (2 caractères max)"></textarea>
+                    </div>
+                </div>
+                <button *ngIf=" controlQuantity.value !=0" (click)=addtocart([produitFemme,controlSize.value,controlQuantity.value,controlNomPersonnalisation.value,controlNumeroPersonnalisation.value])>Ajouter au panier</button>
+            </div>
+        </form>
+
+        <div class="infoBox">
+            <p class="infoLivraison">Livraison </p>
+            <button (click)="openTxtLivraison()" class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenLivraison ? 'open' : 'closed'" >
+            <p>Cet article sera généralement expédié dans les 24h ouvrées. Veuillez prévoir un délai supplémentaire de 3 jours pour la livraison des articles personnalisés.</p>
+        </div>
+        <div class="infoBox">
+            <p class="infoDetails">Details </p>
+            <button (click)="openTxtDetails()" class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenDetails ? 'open' : 'closed'" >
+            <p>{{produitFemme.details}}</p>
+        </div><div class="infoBox">
+            <p class="infoDescription">Description </p>
+            <button (click)="openTxtDescription()"class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenDescription ? 'open' : 'closed'" >
+            <p>{{produitFemme.description}}</p>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf=" produitHomme$ | async as produitHomme">
+    <div class="image">    
+        <img src="{{produitHomme.photoUrl}}" alt="" style="width: 75%;">
+    </div>
+    <div class="info">
+        <p class="txtInfo">{{produitHomme.shortDescription}}</p>
+        <p class="txtInfo">€{{produitHomme.price}}</p>
+        <form #form="ngForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="gris">
+                <div class="taille">
+                    <p class="txtTaille">Taille : </p>
+                    <select class="size" [formControl]="controlSize">
+                        <option value="XS">XS</option>
+                        <option value=" S"> S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        
+                    </select>
+                </div>
+                <div class="quantity">
+                    <div>
+                        <p class="txtQuantite"> Quantité : </p>
+                    </div>
+                    <button type="button" class="btn-left" (click)="decrement()">-</button>
+                    <input  class="inputNumber" type="number" [formControl]="controlQuantity">
+                    <button type="button" class="btn-right" (click)="increment()">+</button>
+                </div>
+                <div class="personnalisation">
+                    <p>Personalisation : </p>
+                    <mat-slide-toggle class="btn-toggle" (change)="openPersonalisation()"></mat-slide-toggle>
+                    <div class="txt-area" [ngClass]="isOpenPersonalisation ? 'open' : 'closed'" >
+                        <textarea [formControl]="controlNomPersonnalisation" class="nomPersonnalisation" name="" id="" cols="10" rows="1" placeholder="Nom (10 caractères max)"></textarea>
+                        <textarea [formControl]="controlNumeroPersonnalisation" class="numeroPersonnalisation" name="" id="" cols="3" rows="1" placeholder="Numero (2 caractères max)"></textarea>
+                    </div>
+                </div>
+                <button *ngIf=" controlQuantity.value !=0" (click)=addtocart([produitHomme,controlSize.value,controlQuantity.value,controlNomPersonnalisation.value,controlNumeroPersonnalisation.value])>Ajouter au panier</button>
+            </div>
+        </form>
+
+        <div class="infoBox">
+            <p class="infoLivraison">Livraison </p>
+            <button (click)="openTxtLivraison()" class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenLivraison ? 'open' : 'closed'" >
+            <p>Cet article sera généralement expédié dans les 24h ouvrées. Veuillez prévoir un délai supplémentaire de 3 jours pour la livraison des articles personnalisés.</p>
+        </div>
+        <div class="infoBox">
+            <p class="infoDetails">Details </p>
+            <button (click)="openTxtDetails()" class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenDetails ? 'open' : 'closed'" >
+            <p>{{produitHomme.details}}</p>
+        </div><div class="infoBox">
+            <p class="infoDescription">Description </p>
+            <button (click)="openTxtDescription()"class="btnPlus">+</button>
+        </div>
+        <div class="txt-area" [ngClass]="isOpenDescription ? 'open' : 'closed'" >
+            <p>{{produitHomme.description}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row"> 
+        <div class="card" (mouseleave)="onHideNumber()" (click)="onView()">
+            <div class="image">
+                <img src="{{joueur.photoUrl}}" alt="" style="width: 33%;">
+            </div>
+            <div (mouseover)="onShowNumber()" class="info">
+
+                <div class="number" *ngIf="showNumber">
+-                <img class="imgNumber" src="{{joueur.photoUrlBis}}" alt="" style="width: 100%;">
+
+                </div>
+                <div *ngIf="!showNumber">
+                <p>{{joueur.firstName}}</p> 
+                <p>{{joueur.lastName}}</p>
+                <p>{{joueur.poste}}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

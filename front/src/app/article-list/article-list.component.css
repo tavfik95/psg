@@ -1,0 +1,56 @@
+
+
+.cards{
+    width: 100%;
+
+    height: auto;
+
+}
+.position{
+    display: flex;
+
+}
+.card{
+    height: 250px;
+    width: 97%;;
+    margin: 20px;
+    box-sizing: border-box;
+    box-shadow: lightgray 4px 4px 20px;
+    display: flex;
+    align-items: center;
+
+}
+
+.info{
+    display: flex;
+    padding-right: 10%;
+}
+p{
+    color: #11315c;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    width: 100px;
+    box-shadow: rgb(238, 225, 225) 3px 3px 7px;
+    color: red;
+  }
+
+.card :hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+img{
+    margin-left: 5%;
+}
+
+.title{
+    font-size: 1.5em;
+}
+
+.text{
+    margin-top: 3%;
+}
+
+

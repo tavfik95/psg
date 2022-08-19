@@ -1,0 +1,10 @@
+button{
+    width: 100px;
+    height: 50px;
+    box-shadow: rgb(238, 225, 225) 3px 3px 7px;
+    color: #ea3849;
+}
+
+.back{
+    margin: 5% 0 5% 45%;
+} 
