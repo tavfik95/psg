@@ -7,13 +7,13 @@ Ce projet comprend :
 
 ## 1. Installation
 
-Dans un premier temps, cloner le dossier avec la commande suivante : 
+Dans un premier temps, vous devez cloner le dossier avec la commande suivante : 
 
 ```bash
 $ git clone <repository>
 ```
 
-Puis installer Node package avec la commande suivante : 
+Puis installez Node package avec la commande suivante : 
 
 ```bash
 npm install
@@ -23,16 +23,20 @@ npm install
 
 Le projet se lance avec deux terminaux (front et back).
 
-D'abord il faut lancer le front avec les commande suivantes : 
+Le front avec les commande suivantes : 
 
 ```bash
 cd front
 ng serve
 ```
 
-Puis le back avec les commandes suivantes : 
+Le back avec les commandes suivantes : 
 
 ```bash
 cd backend
 python3 manage.py runserver
 ```
+
+Puis ouvrez votre navigateur à l'adresse : 
+
+http://localhost:4200/
