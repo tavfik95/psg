@@ -21,7 +21,7 @@ npm install
 
 ## 2. Lancement 
 
-Le projet se lance deux terminaux (front et back).
+Le projet se lance avec deux terminaux (front et back).
 
 D'abord il faut lancer le front avec les commande suivantes : 
 
