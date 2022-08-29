@@ -11,6 +11,5 @@ def actualite(request):
 def article(request, id):
     article =(Article.objects.filter(id=id).values())
     data = (article[0])
-    # return JsonResponse(produit, safe=False)
     return JsonResponse(data, safe=False)
     

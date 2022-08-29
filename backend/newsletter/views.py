@@ -10,6 +10,7 @@ def addAddress(request):
     if request.method == "POST":
         user_form = UserForm(json.loads(request.body))
         print(user_form)
+        # user_form = UserForm(request.POST)
         user=User()
         print(user)
         user.address=user_form.cleaned_data['address']
@@ -17,5 +18,4 @@ def addAddress(request):
         user.lastName=user_form.cleaned_data['lastName']
         user.save()
         print(user)
-    # return JsonResponse((user.addressMail, user.lastName, user.firstName), safe=False)
     return HttpResponse('ok')

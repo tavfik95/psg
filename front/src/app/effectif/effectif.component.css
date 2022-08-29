@@ -26,7 +26,7 @@ button{
     margin: 1% 0 2% 47%;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1250px){
     div{
         display: grid;
         grid-template-columns: repeat(2, 1fr); 

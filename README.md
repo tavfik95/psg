@@ -1,5 +1,7 @@
 # README
 
+Ce projet est une réplique du site du psg, avec une partie actualité, effectif et la partie e-boutique jusqu'au paiement via paypal. 
+
 Ce projet comprend : 
 
 - Un serveur Django (web backend)
